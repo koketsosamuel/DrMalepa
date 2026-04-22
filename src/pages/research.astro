@@ -1,42 +1,15 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research | Dr Piet Malepa</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght,SOFT@9..144,600,100&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="top-nav">
-      <div class="container nav-inner">
-        <a class="brand" href="index.html">
-          <p class="brand-name">Dr Piet Malepa</p>
-          <p class="brand-role">Conservation ecology and zoological systems</p>
-        </a>
-        <details class="mobile-menu">
-          <summary class="menu-pill">Menu</summary>
-          <nav class="mobile-menu-panel" aria-label="Mobile">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link active" href="research.html">Research</a>
-            <a class="nav-link" href="about.html">About</a>
-            <a class="nav-link" href="contact.html">Contact</a>
-            <a class="btn btn-primary btn-small mobile-menu-cta" href="contact.html">Start a Project</a>
-          </nav>
-        </details>
-        <nav class="nav-links" aria-label="Primary">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link active" href="research.html">Research</a>
-          <a class="nav-link" href="about.html">About</a>
-          <a class="nav-link" href="contact.html">Contact</a>
-        </nav>
-        <a class="btn btn-primary btn-small nav-cta" href="contact.html">Start a Project</a>
-      </div>
-    </header>
-
-    <main>
+---
+import Layout from '../layouts/Layout.astro';
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/research', label: 'Research', active: true },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' }
+];
+const cta = { label: 'Start a Project', href: '/contact' };
+---
+<Layout title="Research | Dr Piet Malepa" brandRole="Conservation ecology and zoological systems" navLinks={navLinks} cta={cta} footerMeta="Research across species behavior and habitat resilience" footerCopy="© 2026 Research Page">
+  <main>
       <section class="section">
         <div class="container hero-grid">
           <div>
@@ -52,7 +25,7 @@
             </div>
           </div>
           <div class="hero-image">
-            <img src="assets/images/optimized/dr-piet-malepa-office-right.jpg" alt="Portrait of Dr Piet Malepa seated in his office" />
+            <img src="/assets/images/optimized/dr-piet-malepa-office-right.jpg" alt="Portrait of Dr Piet Malepa seated in his office" />
           </div>
         </div>
       </section>
@@ -158,21 +131,4 @@
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <p class="footer-brand">Dr Piet Malepa</p>
-          <p class="footer-meta">Research across species behavior and habitat resilience</p>
-          <p class="footer-copy">© 2026 Research Page</p>
-        </div>
-        <nav class="footer-links" aria-label="Footer">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </footer>
-  </body>
-</html>
+</Layout>

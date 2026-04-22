@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+const navLinks = [{ href: '/', label: 'Home' }, { href: '/research', label: 'Research' }, { href: '/about', label: 'About' }, { href: '/contact', label: 'Contact', active: true }];
+const cta = { label: 'Book a Meeting', href: '#inquiry-form' };
+---
+<Layout title="Contact | Dr Piet Malepa" brandRole="Collaborations, speaking, and research partnerships" navLinks={navLinks} cta={cta} footerMeta="Home | Research | About | Contact" footerCopy="© 2026 Contact Page">
+  <main>
+      <section class="section">
+        <div class="container">
+          <h1 class="display-title">Contact</h1>
+          <p class="lead">For collaborations, speaking invites, and research partnerships.</p>
+        </div>
+      </section>
+
+      <section class="section" id="inquiry-form">
+        <div class="container contact-grid">
+          <article class="form-card">
+            <h2 class="section-title">Send an Inquiry</h2>
+            <form class="form-stack" action="/api/contact-placeholder" method="post">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="organization">Organization</label>
+                <input id="organization" name="organization" type="text" autocomplete="organization" required />
+              </div>
+              <div class="field">
+                <label for="message">Project Details</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <div class="button-row">
+                <button class="btn btn-primary" type="submit">Submit Request</button>
+              </div>
+            </form>
+          </article>
+
+          <aside class="detail-card">
+            <h2 class="section-title">Direct Contact</h2>
+            <ul class="detail-list">
+              <li>Email: hello@drmalepa.org</li>
+              <li>Coordinator: +27 11 000 0000</li>
+              <li>Based at: City Zoological Institute</li>
+              <li>Response: Within 2-4 business days</li>
+            </ul>
+            <div class="detail-image" style="margin-top: 14px;">
+              <img src="/assets/images/optimized/dr-piet-malepa-office-right.jpg" alt="Portrait of Dr Piet Malepa seated in his office" />
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+</Layout>

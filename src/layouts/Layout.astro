@@ -1,0 +1,35 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { NavLink, CTA } from '../components/Header.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  bodyClass?: string;
+  brandRole: string;
+  navLinks: NavLink[];
+  cta: CTA;
+  footerMeta: string;
+  footerCopy: string;
+}
+
+const { title, bodyClass, brandRole, navLinks, cta, footerMeta, footerCopy } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght,SOFT@9..144,600,100&display=swap" rel="stylesheet" />
+  </head>
+  <body class={bodyClass}>
+    <Header brandRole={brandRole} navLinks={navLinks} cta={cta} />
+    <slot />
+    <Footer metaLine={footerMeta} copyLine={footerCopy} />
+  </body>
+</html>

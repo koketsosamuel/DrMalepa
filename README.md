@@ -1,27 +1,39 @@
-# Dr Piet Malepa Website (Vanilla HTML/CSS)
+# Dr Piet Malepa Website (Astro)
 
-Static multi-page implementation derived from `dr-piet-malepa.pen`.
+Multi-page Astro site derived from `dr-piet-malepa.pen`.
 
 ## Pages
 
-- `index.html` (Home)
-- `research.html`
-- `about.html`
-- `contact.html`
+- `/` (Home) — `src/pages/index.astro`
+- `/research` — `src/pages/research.astro`
+- `/about` — `src/pages/about.astro`
+- `/contact` — `src/pages/contact.astro`
 
-All pages share `styles.css`.
+## Shared Components
+
+- `src/layouts/Layout.astro` — HTML shell, fonts, global styles, mounts Header/Footer
+- `src/components/Header.astro` — top nav, accepts `brandRole`, `navLinks`, `cta` props
+- `src/components/Footer.astro` — site footer, accepts `metaLine`, `copyLine` props
+
+Global styles live at `src/styles/global.css` and are imported by the Layout.
 
 ## Run
 
-Open any HTML file directly, or serve the directory with a static server.
-
-Example:
-
 ```bash
-python3 -m http.server 8080
+npm install
+npm run dev
 ```
 
-Then visit `http://localhost:8080/index.html`.
+Then visit `http://localhost:4321`.
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+Output is written to `dist/`.
 
 ## Contact Form
 
@@ -29,26 +41,18 @@ The contact form posts to the placeholder endpoint:
 
 - `POST /api/contact-placeholder`
 
-Update `contact.html` if you want a production endpoint.
+Update `src/pages/contact.astro` for a production endpoint.
 
 ## Local Image Mapping
 
-Website-ready optimized assets are stored in:
+Website-ready optimized assets are served from `public/assets/images/optimized/`.
 
-- `assets/images/optimized/`
-
-Source originals are stored in:
-
-- `assets/images/source/`
-
-Legacy generated images are archived (compressed and renamed) in:
-
-- `assets/images/archive/`
+Source originals: `public/assets/images/source/`. Legacy archive: `public/assets/images/archive/`.
 
 Current production mappings:
 
-- Home hero: `assets/images/optimized/dr-piet-malepa-office-right.jpg`
-- Home highlight image: `assets/images/optimized/amphibian-frog-study.jpg`
-- Research hero: `assets/images/optimized/dr-piet-malepa-office-right.jpg`
-- About portrait: `assets/images/optimized/dr-piet-malepa-office-right.jpg`
-- Contact details image: `assets/images/optimized/dr-piet-malepa-office-right.jpg`
+- Home hero: `/assets/images/optimized/dr-piet-malepa-office-right.jpg`
+- Home highlight image: `/assets/images/optimized/amphibian-frog-study.jpg`
+- Research hero: `/assets/images/optimized/dr-piet-malepa-office-right.jpg`
+- About portrait: `/assets/images/optimized/dr-piet-malepa-office-right.jpg`
+- Contact details image: `/assets/images/optimized/dr-piet-malepa-office-right.jpg`
