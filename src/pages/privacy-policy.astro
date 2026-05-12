@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/research', label: 'Research' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+const cta = { label: 'Contact', href: '/contact' };
+---
+<Layout
+  title="Privacy Policy | Dr Piet Malepa"
+  brandRole="Conservation Research · Est. 2009"
+  navLinks={navLinks}
+  cta={cta}
+  footerMeta="Privacy information for drmalepa.co.za"
+  footerCopy="© 2026 Research Profile"
+>
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="kicker">Legal</span>
+        <h1 class="section-title" style="margin-top: 18px;">Privacy Policy</h1>
+        <p class="lead">Last updated: 12 May 2026</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container bio-grid">
+        <article class="card">
+          <h2 class="card-title">Information We Collect</h2>
+          <p class="card-body">
+            This website may collect information you submit through the contact form, including your name,
+            email address, organisation, and message. If you use email or phone links, your contact details
+            may be processed by the relevant email, phone, or network provider.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="card-title">How We Use Information</h2>
+          <p class="card-body">
+            Information is used to respond to enquiries, discuss research collaborations, manage professional
+            communication, and improve the website. We do not sell personal information.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="card-title">Third Parties</h2>
+          <p class="card-body">
+            The site is hosted by third-party infrastructure providers. External links, such as LinkedIn,
+            PubMed, journals, and academic resources, are governed by their own privacy policies.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="card-title">Your Rights</h2>
+          <p class="card-body">
+            You may request access, correction, or deletion of personal information submitted through this
+            website by using the contact details on the contact page.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/research', label: 'Research' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+const cta = { label: 'Contact', href: '/contact' };
+---
+<Layout
+  title="Terms and Conditions | Dr Piet Malepa"
+  brandRole="Conservation Research · Est. 2009"
+  navLinks={navLinks}
+  cta={cta}
+  footerMeta="Website terms for drmalepa.co.za"
+  footerCopy="© 2026 Research Profile"
+>
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="kicker">Legal</span>
+        <h1 class="section-title" style="margin-top: 18px;">Terms and Conditions</h1>
+        <p class="lead">Last updated: 12 May 2026</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container bio-grid">
+        <article class="card">
+          <h2 class="card-title">Website Use</h2>
+          <p class="card-body">
+            This website provides professional and academic profile information. You may browse the site for
+            lawful personal, educational, or professional purposes.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="card-title">Content Accuracy</h2>
+          <p class="card-body">
+            Reasonable care is taken to keep information accurate and current, but research records,
+            affiliations, publications, and contact details may change over time.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="card-title">Intellectual Property</h2>
+          <p class="card-body">
+            Site content, design, text, and images are provided for informational use and may not be copied,
+            republished, or misrepresented without appropriate permission.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="card-title">External Links</h2>
+          <p class="card-body">
+            Links to third-party websites are provided for convenience. Those sites are controlled by their
+            respective owners and may have separate terms and privacy policies.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>

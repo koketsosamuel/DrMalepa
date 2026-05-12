@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/research', label: 'Research' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+const cta = { label: 'Contact', href: '/contact' };
+---
+<Layout
+  title="Cookie Policy | Dr Piet Malepa"
+  brandRole="Conservation Research · Est. 2009"
+  navLinks={navLinks}
+  cta={cta}
+  footerMeta="Cookie information for drmalepa.co.za"
+  footerCopy="© 2026 Research Profile"
+>
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="kicker">Legal</span>
+        <h1 class="section-title" style="margin-top: 18px;">Cookie Policy</h1>
+        <p class="lead">Last updated: 12 May 2026</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container cards-grid">
+        <article class="card">
+          <h2 class="card-title">Current Cookie Use</h2>
+          <p class="card-body">
+            This website is designed as a static informational site and does not currently set non-essential
+            cookies for visitors.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="card-title">Embedded and External Services</h2>
+          <p class="card-body">
+            External websites linked from this site, including LinkedIn, journals, and publication databases,
+            may use cookies under their own policies when you visit them.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="card-title">Managing Cookies</h2>
+          <p class="card-body">
+            You can block or delete cookies through your browser settings. If analytics or embedded media are
+            added later, this policy should be updated before launch.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/research', label: 'Research' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+const cta = { label: 'Contact', href: '/contact' };
+---
+<Layout
+  title="Page Not Found | Dr Piet Malepa"
+  brandRole="Conservation Research · Est. 2009"
+  navLinks={navLinks}
+  cta={cta}
+  footerMeta="Zoo Ecology · Biodiversity Monitoring · Academic Research."
+  footerCopy="© 2026 Research Profile"
+>
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="kicker">404</span>
+        <h1 class="display-title" style="margin-top: 18px;">Page not found.</h1>
+        <p class="lead">The page you requested does not exist. Try the homepage or contact page.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="/">Go home</a>
+          <a class="btn btn-secondary" href="/contact">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

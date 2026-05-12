@@ -1,131 +1,255 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
 const navLinks = [
-  { href: '#research-highlights', label: 'Research Highlights' },
-  { href: '#selected-work', label: 'Selected Work' },
-  { href: '/research', label: 'Research Page' },
-  { href: '/about', label: 'About' },
+  { href: '#research', label: 'Research' },
+  { href: '#publications', label: 'Publications' },
+  { href: '#field-notes', label: 'Field Notes' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
 ];
-const cta = { label: 'Contact', href: '/contact' };
+const cta = { label: 'Start collaboration ->', href: '#contact' };
+
+const publications = [
+  {
+    year: '2025',
+    journal: 'Zoo Biology',
+    tag: 'Captive breeding',
+    title: "Hatching plasticity in captive-bred Pickersgill's reed frog",
+    body: 'Disturbance can trigger earlier hatching, but disturbed clutches showed lower 30-day survival, supporting low-disturbance handling protocols.',
+    link: 'PubMed · 40879535',
+    href: 'https://pubmed.ncbi.nlm.nih.gov/40879535/',
+  },
+  {
+    year: '2022',
+    journal: 'Zoo Biology',
+    tag: 'Developmental ecology',
+    title: "Developmental life stages in ex-situ Pickersgill's reed frog",
+    body: 'Documents seven developmental stages under captive care and provides practical timing data for conservation breeding programs.',
+    link: 'PubMed · 35255154',
+    href: 'https://pubmed.ncbi.nlm.nih.gov/35255154/',
+  },
+  {
+    year: '2025',
+    journal: 'African Biodiversity & Conservation',
+    tag: 'Conservation planning',
+    title: 'First five years of the Biodiversity Management Plan',
+    body: "Reports multi-stakeholder progress and measurable outcomes for Pickersgill's reed frog conservation planning.",
+    link: 'Open journal article',
+    href: 'https://www.abcjournal.org/index.php/abc/article/view/495',
+  },
+];
+
+const fieldNotes = [
+  {
+    title: 'Wetland survey, Mount Moreland',
+    date: 'Sep 2025',
+    body: 'Calling males recorded across 14 nights; chorus density mapped against rainfall and water quality indicators.',
+    image: '/assets/images/optimized/amphibian-frog-study.jpg',
+  },
+  {
+    title: 'Captive breeding cohort, Pretoria',
+    date: 'Mar 2026',
+    body: 'Seven developmental stages re-confirmed; revised hatching protocols prepared for low-disturbance trial workflows.',
+    image: '/assets/images/optimized/dr-piet-malepa-office-right.jpg',
+  },
+  {
+    title: 'Stakeholder workshop, Durban',
+    date: 'Apr 2026',
+    body: 'Five-year BMP outcomes presented with conservation partners, zoo teams, and regional implementation groups.',
+    image: '/assets/images/archive/legacy-researcher-zoo-path.jpg',
+  },
+];
 ---
 <Layout
   title="Dr Piet Malepa | Conservation Research"
   bodyClass="home-page"
-  brandRole="Academic in conservation ecology and zoological systems"
+  brandRole="Conservation Research · Est. 2009"
   navLinks={navLinks}
   cta={cta}
-  footerMeta="Zoo Ecology | Biodiversity Monitoring | Academic Research"
+  footerMeta="Zoo Ecology · Biodiversity Monitoring · Academic Research. Based in Pretoria, working across Southern African wetland systems."
   footerCopy="© 2026 Research Profile"
 >
   <main class="home-main">
-    <div class="butterfly-field" aria-hidden="true">
-      <span class="butterfly butterfly-1"></span>
-      <span class="butterfly butterfly-2"></span>
-      <span class="butterfly butterfly-3"></span>
-      <span class="butterfly butterfly-4"></span>
-      <span class="butterfly butterfly-5"></span>
-    </div>
-    <section class="section">
+    <section class="hero-section">
       <div class="container hero-grid">
         <div>
-          <span class="badge">Wildlife systems lab</span>
-          <h1 class="display-title">Studying wildlife systems to protect life at every scale.</h1>
+          <span class="eyebrow-line mono">Current Focus · Amphibian Indicators</span>
+          <h1 class="display-title">Studying wildlife systems to <em>protect life</em> at every scale.</h1>
           <p class="lead">
-            Dr Piet Malepa combines zoo observation, field data, and community science to turn biodiversity
+            Dr Malepa combines zoo observation, field data, and community science to turn biodiversity
             research into practical conservation action across habitats, species behavior, and ecosystem health.
           </p>
           <div class="button-row">
-            <a class="btn btn-primary" href="/research">Explore Research</a>
-            <a class="btn btn-secondary" href="/contact">Start Collaboration</a>
+            <a class="btn btn-primary" href="#publications">Explore Research -></a>
+            <a class="btn btn-secondary" href="#contact">Start Collaboration</a>
           </div>
         </div>
-        <div class="hero-image">
+
+        <figure class="figure-frame portrait-tall">
           <img src="/assets/images/optimized/dr-piet-malepa-office-right.jpg" alt="Portrait of Dr Piet Malepa seated in his office" />
-        </div>
+          <figcaption class="figcaption">
+            <span>Fig. 01 — Field office, Groenkloof</span>
+            <span>2026</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" aria-label="Research statistics">
       <div class="container stats-grid">
         <article class="stat-card">
-          <p class="stat-label">Verified Peer-Reviewed Papers (Profiled)</p>
-          <p class="stat-value">3</p>
+          <p class="stat-value">17</p>
+          <p class="stat-label">Years in conservation ecology</p>
         </article>
         <article class="stat-card">
-          <p class="stat-label">Documented Outputs Linked</p>
-          <p class="stat-value">6</p>
+          <p class="stat-value">03</p>
+          <p class="stat-label">Verified peer-reviewed papers</p>
         </article>
         <article class="stat-card">
-          <p class="stat-label">Primary Threatened Species Focus</p>
-          <p class="stat-value">1</p>
+          <p class="stat-value">06</p>
+          <p class="stat-label">Documented research outputs</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-value">01</p>
+          <p class="stat-label">Primary threatened species focus</p>
         </article>
       </div>
     </section>
 
-    <section class="section" id="research-highlights">
-      <div class="container split-grid">
-        <article class="panel-soft">
-          <p class="kicker">Current Study Highlight</p>
-          <h2 class="section-title">Amphibian signals within a wider biodiversity program</h2>
-          <p class="lead">
-            This active study tracks calling activity, breeding timing, and water quality while feeding a broader
-            research program on habitat resilience and zoo ecosystem dynamics.
-          </p>
-          <ul class="list-check">
-            <li>Amphibian monitoring linked to wider field indicators</li>
-            <li>Findings interpreted with cross-species observations</li>
-            <li>Applied to restoration planning and habitat management</li>
-          </ul>
-        </article>
-        <div class="visual-card">
-          <img src="/assets/images/optimized/amphibian-frog-study.jpg" alt="Close-up of a green frog on a leaf" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="selected-work">
+    <section class="study-section" id="research">
       <div class="container">
-        <p class="kicker">Selected Publications and Projects</p>
-        <h2 class="section-title">Research shaped for conservation practice</h2>
-        <div class="cards-grid">
-          <article class="card">
-            <h3 class="card-title">Hatching Plasticity in Captive-Bred Pickersgill's Reed Frog</h3>
-            <p class="card-body">
-              Zoo Biology (2025): disturbance can trigger earlier hatching, but disturbed clutches showed lower
-              30-day survival, supporting low-disturbance handling protocols.
+        <span class="kicker">§ 02 — Current Study Highlight</span>
+        <div class="split-grid" style="margin-top: 34px;">
+          <div>
+            <h2 class="section-title">Amphibian signals within a wider biodiversity program.</h2>
+            <p class="body-copy">
+              An active study tracking calling activity, breeding timing, and water quality, feeding a broader
+              research program on habitat resilience and zoo ecosystem dynamics.
             </p>
-            <a class="card-link" href="https://pubmed.ncbi.nlm.nih.gov/40879535/" target="_blank" rel="noopener noreferrer">Read on PubMed -></a>
-          </article>
-          <article class="card">
-            <h3 class="card-title">Developmental Life Stages in Ex-Situ Pickersgill's Reed Frog</h3>
-            <p class="card-body">
-              Zoo Biology (2022): documents seven developmental stages under captive care and provides practical
-              timing data for conservation breeding programs.
-            </p>
-            <a class="card-link" href="https://pubmed.ncbi.nlm.nih.gov/35255154/" target="_blank" rel="noopener noreferrer">Read on PubMed -></a>
-          </article>
-          <article class="card">
-            <h3 class="card-title">First Five Years of the Biodiversity Management Plan</h3>
-            <p class="card-body">
-              African Biodiversity and Conservation (2025): reports multi-stakeholder progress and measurable
-              outcomes for Pickersgill's reed frog conservation planning.
-            </p>
-            <a class="card-link" href="https://www.abcjournal.org/index.php/abc/article/view/495" target="_blank" rel="noopener noreferrer">Open journal article -></a>
-          </article>
+            <ul class="study-list">
+              <li><span class="mono">01</span><span>Amphibian monitoring linked to wider field indicators</span></li>
+              <li><span class="mono">02</span><span>Findings interpreted with cross-species observations</span></li>
+              <li><span class="mono">03</span><span>Applied to restoration planning and habitat management</span></li>
+              <li><span class="mono">04</span><span>Outputs feed regional Biodiversity Management Plan</span></li>
+            </ul>
+          </div>
+          <figure class="figure-frame frog-tall">
+            <img src="/assets/images/optimized/amphibian-frog-study.jpg" alt="Close-up of a green frog on a leaf" />
+            <figcaption class="figcaption">
+              <span>Fig. 02 — Pickersgill's reed frog</span>
+              <span>Ex-situ</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section class="section" id="collaborate">
-      <div class="container cta-band">
-        <div>
-          <h2 class="section-title">Partner on biodiversity and wildlife research</h2>
-          <p>
-            Open to collaborative studies, student supervision, and conservation strategy with zoo teams,
-            universities, and public-sector partners.
-          </p>
+    <section class="publications-section" id="publications">
+      <div class="container">
+        <div class="section-head-row">
+          <div>
+            <span class="kicker">§ 03 — Selected Publications</span>
+            <h2 class="section-title" style="margin-top: 18px;">Research shaped for conservation practice.</h2>
+          </div>
+          <a class="nav-link" href="/research">View full list -></a>
         </div>
-        <a class="btn btn-primary" href="/contact">Contact Dr Malepa</a>
+
+        <div class="pub-list">
+          {publications.map((publication) => (
+            <a class="pub-row" href={publication.href} target="_blank" rel="noopener noreferrer">
+              <span class="pub-year">{publication.year}</span>
+              <span>
+                <span class="pub-meta-row">
+                  <span class="mono">{publication.journal}</span>
+                  <span class="pub-dot" aria-hidden="true"></span>
+                  <span class="mono" style="color: var(--accent);">{publication.tag}</span>
+                </span>
+                <span class="pub-title">{publication.title}</span>
+                <span class="pub-body">{publication.body}</span>
+              </span>
+              <span class="pub-link-cell mono">{publication.link} -></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="field-section" id="field-notes">
+      <div class="container">
+        <div class="section-head-row">
+          <div>
+            <span class="kicker">§ 04 — From the field</span>
+            <h2 class="section-title" style="margin-top: 18px;">Recent fieldwork & dispatches.</h2>
+          </div>
+          <a class="nav-link" href="/research">All field notes -></a>
+        </div>
+
+        <div class="field-grid">
+          {fieldNotes.map((note) => (
+            <article class="field-card">
+              <img src={note.image} alt="" />
+              <span class="mono">{note.date}</span>
+              <h3 class="card-title" style="margin-top: 10px;">{note.title}</h3>
+              <p class="card-body">{note.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container split-grid">
+        <figure class="figure-frame about-portrait">
+          <img src="/assets/images/optimized/dr-piet-malepa-office-right.jpg" alt="Portrait of Dr Piet Malepa seated in his office" />
+          <figcaption class="figcaption">
+            <span>Fig. 03 — Mt Moreland transect</span>
+            <span>2025</span>
+          </figcaption>
+        </figure>
+        <div>
+          <span class="kicker">§ 05 — About</span>
+          <p class="quote-text" style="margin-top: 24px;">
+            <em>"Conservation that holds up</em> connects what we see in zoos with what we measure in the field,
+            and gives the people who manage landscapes something they can actually act on."
+          </p>
+          <div class="meta-grid">
+            <div>
+              <span class="mono">Focus areas</span>
+              <p>Zoo ecology · Amphibian indicators · Biodiversity monitoring · Conservation breeding · Stakeholder planning.</p>
+            </div>
+            <div>
+              <span class="mono">Affiliations</span>
+              <p>Wildlife Systems Lab · Zoo partner network · KZN BMP cohort · University supervision.</p>
+            </div>
+            <div>
+              <span class="mono">Methods</span>
+              <p>Acoustic monitoring · Captive cohort tracking · Habitat assessment · Multi-stakeholder facilitation.</p>
+            </div>
+            <div>
+              <span class="mono">Networks</span>
+              <p>
+                <a class="inline-link" href="https://za.linkedin.com/in/dr-piet-lesiba-malepa-phd-9296ab7b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                · ORCID · ResearchGate · Google Scholar · Pickersgill's BMP working group.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collaborate-section" id="contact">
+      <div class="container cta-band">
+        <span class="kicker">§ 06 — Collaborate</span>
+        <h2 class="cta-title" style="margin-top: 24px;">Partner on biodiversity and <em>wildlife research</em>.</h2>
+        <p class="lead">
+          Open to collaborative studies, student supervision, and conservation strategy with zoo teams,
+          universities, and public-sector partners.
+        </p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="/contact">Contact Dr Malepa -></a>
+          <span class="mono" style="align-self: center; color: var(--muted);">research@drmalepa.co.za</span>
+        </div>
       </div>
     </section>
   </main>

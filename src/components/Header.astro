@@ -18,11 +18,16 @@ interface Props {
 
 const { brandRole, navLinks, cta } = Astro.props;
 ---
+<div class="meta-bar pad-x">
+  <span class="mono">Wildlife Systems Lab · Pretoria · ZA</span>
+  <span class="mono"><span class="live-dot" aria-hidden="true"></span>Field season · Active</span>
+  <span class="mono">Vol. XII · May 2026</span>
+</div>
 <header class="top-nav">
-  <div class="container nav-inner">
+  <div class="nav-inner pad-x">
     <a class="brand" href="/">
+      <span class="brand-role mono">{brandRole}</span>
       <p class="brand-name">Dr Piet Malepa</p>
-      <p class="brand-role">{brandRole}</p>
     </a>
     <details class="mobile-menu">
       <summary class="menu-pill">Menu</summary>

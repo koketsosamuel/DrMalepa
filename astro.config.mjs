@@ -1,3 +1,12 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
-export default defineConfig({});
+export default defineConfig({
+  site: 'https://drmalepa.co.za',
+  output: 'static',
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/404/'),
+    }),
+  ],
+});
