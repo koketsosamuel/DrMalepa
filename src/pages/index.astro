@@ -5,13 +5,31 @@ import Icon from '../components/Icon.astro';
 const navLinks = [
   { href: '#research', label: 'Research' },
   { href: '#publications', label: 'Publications' },
-  { href: '#field-notes', label: 'Field Notes' },
+  { href: '#studies', label: 'Studies' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
 ];
 const cta = { label: 'Start collaboration', href: '#contact', arrow: true };
 
 const publications = [
+  {
+    year: '2026',
+    journal: 'African Biodiversity & Conservation',
+    tag: 'Release planning',
+    title: "Site selection for release of captive-bred Pickersgill's reed frogs",
+    body: 'Characterises wetland vegetation and co-occurring predators and prey to guide release-site selection for captive-bred Hyperolius pickersgilli.',
+    link: 'DOI · 10.38201/abc.v56.1.a6',
+    href: 'https://doi.org/10.38201/abc.v56.1.a6',
+  },
+  {
+    year: '2025',
+    journal: 'African Biodiversity & Conservation',
+    tag: 'Conservation planning',
+    title: 'First five years of the Biodiversity Management Plan',
+    body: "Reports multi-stakeholder progress and measurable outcomes for Pickersgill's reed frog conservation planning.",
+    link: 'Open journal article',
+    href: 'https://www.abcjournal.org/index.php/abc/article/view/495',
+  },
   {
     year: '2025',
     journal: 'Zoo Biology',
@@ -30,69 +48,119 @@ const publications = [
     link: 'PubMed · 35255154',
     href: 'https://pubmed.ncbi.nlm.nih.gov/35255154/',
   },
-  {
-    year: '2025',
-    journal: 'African Biodiversity & Conservation',
-    tag: 'Conservation planning',
-    title: 'First five years of the Biodiversity Management Plan',
-    body: "Reports multi-stakeholder progress and measurable outcomes for Pickersgill's reed frog conservation planning.",
-    link: 'Open journal article',
-    href: 'https://www.abcjournal.org/index.php/abc/article/view/495',
-  },
 ];
 
-const fieldNotes = [
+const researchStudies = [
   {
-    title: 'Wetland survey, Mount Moreland',
-    date: 'Sep 2025',
-    body: 'Calling males recorded across 14 nights; chorus density mapped against rainfall and water quality indicators.',
+    year: '2026',
+    journal: 'African Biodiversity & Conservation',
+    title: "Release-site selection for Pickersgill's reed frog",
+    body: 'Bioblitz surveys across occupied KZN wetlands and a candidate release site to define suitable vegetation, predator risk, and prey availability for translocation.',
+    href: 'https://doi.org/10.38201/abc.v56.1.a6',
     image: '/assets/images/optimized/amphibian-frog-study.jpg',
   },
   {
-    title: 'Captive breeding cohort, Pretoria',
-    date: 'Mar 2026',
-    body: 'Seven developmental stages re-confirmed; revised hatching protocols prepared for low-disturbance trial workflows.',
-    image: '/assets/images/optimized/dr-piet-malepa-office-right.jpg',
+    year: '2025',
+    journal: 'African Biodiversity & Conservation',
+    title: 'Biodiversity Management Plan progress',
+    body: "Reviews the first five years of collaborative BMP implementation for Pickersgill's reed frog across partner organisations and protected wetland sites.",
+    href: 'https://www.abcjournal.org/index.php/abc/article/view/495',
+    image: '/assets/images/optimized/dr-piet-malepa-joburg-parks-speech.jpg',
   },
   {
-    title: 'Stakeholder workshop, Durban',
-    date: 'Apr 2026',
-    body: 'Five-year BMP outcomes presented with conservation partners, zoo teams, and regional implementation groups.',
-    image: '/assets/images/archive/legacy-researcher-zoo-path.jpg',
+    year: '2025',
+    journal: 'Zoo Biology',
+    title: 'Hatching plasticity in captive breeding',
+    body: 'Tests how clutch disturbance affects hatching timing and early survival in captive-bred Hyperolius pickersgilli, informing low-disturbance husbandry protocols.',
+    href: 'https://pubmed.ncbi.nlm.nih.gov/40879535/',
+    image: '/assets/images/optimized/dr-piet-malepa-office-right.jpg',
   },
 ];
 ---
 <Layout
-  title="Dr Piet Malepa | Conservation Research"
+  title="Dr Piet Malepa | Conservation Ecologist & Amphibian Researcher"
+  description="Official research profile of Dr Piet Lesiba Malepa — conservation ecology, Pickersgill's reed frog research, zoo-based amphibian husbandry, and biodiversity management in South Africa."
+  keywords="Dr Piet Malepa, Piet Lesiba Malepa, conservation ecologist Pretoria, Pickersgill reed frog, Hyperolius pickersgilli, amphibian captive breeding, Johannesburg Zoo, biodiversity management plan, Zoo Biology"
+  image="/assets/images/optimized/dr-piet-malepa-joburg-parks-speech.jpg"
+  type="profile"
   bodyClass="home-page"
   navLinks={navLinks}
   cta={cta}
   footerMeta="Zoo Ecology · Biodiversity Monitoring · Academic Research. Based in Pretoria, working across Southern African wetland systems."
   footerCopy="© 2026 Research Profile"
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Dr Piet Malepa',
+      url: 'https://drmalepa.co.za',
+      description: "Official research profile of Dr Piet Lesiba Malepa — conservation ecology, Pickersgill's reed frog research, and biodiversity management in South Africa.",
+      inLanguage: 'en-ZA',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': 'https://drmalepa.co.za/#person',
+      name: 'Dr Piet Lesiba Malepa',
+      alternateName: ['Piet Malepa', 'Piet Lesiba Malepa', 'Dr Piet Malepa'],
+      url: 'https://drmalepa.co.za',
+      image: 'https://drmalepa.co.za/assets/images/optimized/dr-piet-malepa-joburg-parks-speech.jpg',
+      jobTitle: 'Conservation Ecologist',
+      email: 'mailto:piet.malepa@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Pretoria',
+        addressCountry: 'ZA',
+      },
+      sameAs: ['https://za.linkedin.com/in/dr-piet-lesiba-malepa-phd-9296ab7b'],
+      knowsAbout: [
+        'Conservation ecology',
+        'Amphibian conservation',
+        "Pickersgill's reed frog",
+        'Hyperolius pickersgilli',
+        'Zoo ecology',
+        'Biodiversity management',
+        'Captive breeding',
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Selected publications',
+      itemListElement: publications.map((publication, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'ScholarlyArticle',
+          name: publication.title,
+          datePublished: publication.year,
+          isPartOf: {
+            '@type': 'Periodical',
+            name: publication.journal,
+          },
+          url: publication.href,
+          author: { '@id': 'https://drmalepa.co.za/#person' },
+        },
+      })),
+    },
+  ]}
 >
   <main class="home-main">
     <section class="hero-section">
       <div class="container hero-grid">
-        <div>
-          <span class="eyebrow-line mono">Current Focus · Amphibian Indicators</span>
-          <h1 class="display-title">Studying wildlife systems to <em>protect life</em> at every scale.</h1>
-          <p class="lead">
-            Dr Malepa combines zoo observation, field data, and community science to turn biodiversity
-            research into practical conservation action across habitats, species behavior, and ecosystem health.
-          </p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="#publications">Explore Research <Icon name="arrow-right" /></a>
-            <a class="btn btn-secondary" href="#contact">Start Collaboration</a>
-          </div>
-        </div>
-
-        <figure class="figure-frame portrait-tall">
+        <span class="eyebrow-line mono hero-eyebrow">Conservation Research</span>
+        <h1 class="display-title hero-title">Studying wildlife systems to <em>protect life</em> at every scale.</h1>
+        <figure class="figure-frame portrait-tall hero-media">
           <img src="/assets/images/optimized/dr-piet-malepa-joburg-parks-speech.jpg" alt="Dr Piet Malepa speaking at a Johannesburg City Parks event" />
-          <figcaption class="figcaption">
-            <span>Fig. 01 — Johannesburg City Parks</span>
-            <span>2026</span>
-          </figcaption>
         </figure>
+        <p class="lead hero-lead">
+          Dr Malepa combines zoo observation, field data, and community science to turn biodiversity
+          research into practical conservation action across habitats, species behavior, and ecosystem health.
+        </p>
+        <div class="button-row hero-actions">
+          <a class="btn btn-primary" href="#publications">Explore Research <Icon name="arrow-right" /></a>
+          <a class="btn btn-secondary" href="#contact">Start Collaboration</a>
+        </div>
       </div>
     </section>
 
@@ -103,11 +171,11 @@ const fieldNotes = [
           <p class="stat-label">Years in conservation ecology</p>
         </article>
         <article class="stat-card">
-          <p class="stat-value">03</p>
+          <p class="stat-value">04</p>
           <p class="stat-label">Verified peer-reviewed papers</p>
         </article>
         <article class="stat-card">
-          <p class="stat-value">06</p>
+          <p class="stat-value">07</p>
           <p class="stat-label">Documented research outputs</p>
         </article>
         <article class="stat-card">
@@ -136,10 +204,6 @@ const fieldNotes = [
           </div>
           <figure class="figure-frame frog-tall">
             <img src="/assets/images/optimized/amphibian-frog-study.jpg" alt="Close-up of a green frog on a leaf" />
-            <figcaption class="figcaption">
-              <span>Fig. 02 — Pickersgill's reed frog</span>
-              <span>Ex-situ</span>
-            </figcaption>
           </figure>
         </div>
       </div>
@@ -175,24 +239,24 @@ const fieldNotes = [
       </div>
     </section>
 
-    <section class="field-section" id="field-notes">
+    <section class="field-section" id="studies">
       <div class="container">
         <div class="section-head-row">
           <div>
-            <span class="kicker">From the field</span>
-            <h2 class="section-title" style="margin-top: 18px;">Recent fieldwork & dispatches.</h2>
+            <span class="kicker">Selected studies</span>
+            <h2 class="section-title" style="margin-top: 18px;">Research completed and published.</h2>
           </div>
-          <a class="nav-link" href="/research">All field notes <Icon name="arrow-right" /></a>
+          <a class="nav-link" href="/research">All research <Icon name="arrow-right" /></a>
         </div>
 
         <div class="field-grid">
-          {fieldNotes.map((note) => (
-            <article class="field-card">
-              <img src={note.image} alt="" />
-              <span class="mono">{note.date}</span>
-              <h3 class="card-title" style="margin-top: 10px;">{note.title}</h3>
-              <p class="card-body">{note.body}</p>
-            </article>
+          {researchStudies.map((study) => (
+            <a class="field-card" href={study.href} target="_blank" rel="noopener noreferrer">
+              <img src={study.image} alt="" />
+              <span class="mono">{study.year} · {study.journal}</span>
+              <h3 class="card-title" style="margin-top: 10px;">{study.title}</h3>
+              <p class="card-body">{study.body}</p>
+            </a>
           ))}
         </div>
       </div>
@@ -202,10 +266,6 @@ const fieldNotes = [
       <div class="container split-grid">
         <figure class="figure-frame about-portrait">
           <img src="/assets/images/optimized/dr-piet-malepa-office-right.jpg" alt="Portrait of Dr Piet Malepa seated in his office" />
-          <figcaption class="figcaption">
-            <span>Office, Groenkloof</span>
-            <span>2026</span>
-          </figcaption>
         </figure>
         <div>
           <span class="kicker">About</span>
@@ -248,7 +308,7 @@ const fieldNotes = [
         </p>
         <div class="button-row">
           <a class="btn btn-primary" href="/contact">Contact Dr Malepa <Icon name="arrow-right" /></a>
-          <span class="mono" style="align-self: center; color: var(--muted);">research@drmalepa.co.za</span>
+          <span class="mono" style="align-self: center; color: var(--muted);">piet.malepa@gmail.com</span>
         </div>
       </div>
     </section>

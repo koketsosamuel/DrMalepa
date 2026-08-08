@@ -1,0 +1,18 @@
+{
+  "name": "Dr Piet Malepa",
+  "short_name": "Dr Malepa",
+  "description": "Conservation ecology research profile of Dr Piet Lesiba Malepa — amphibian conservation, zoo ecology, and biodiversity management.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4efe6",
+  "theme_color": "#2f5d5b",
+  "lang": "en-ZA",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Prefer the homepage and research content
+Disallow:
+
 Sitemap: https://drmalepa.co.za/sitemap-index.xml
+Host: https://drmalepa.co.za

@@ -1,6 +1,6 @@
 ---
 interface Props {
-  name: 'arrow-right' | 'arrow-left';
+  name: 'arrow-right' | 'arrow-left' | 'home' | 'research' | 'publications' | 'studies' | 'about' | 'contact';
   class?: string;
 }
 
@@ -17,5 +17,46 @@ const classes = ['icon', className].filter(Boolean).join(' ');
 {name === 'arrow-left' && (
   <svg class={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
     <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+)}
+
+{name === 'home' && (
+  <svg class={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M2.5 7.5 8 2.5l5.5 5M4 7v5.5h3V10h2v2.5h3V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+)}
+
+{name === 'research' && (
+  <svg class={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <circle cx="7" cy="7" r="4" stroke="currentColor" stroke-width="1.5" />
+    <path d="m10 10 3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  </svg>
+)}
+
+{name === 'publications' && (
+  <svg class={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M3.5 2.5h7.5a1.5 1.5 0 0 1 1.5 1.5v9a1 1 0 0 1-1 1H4.5a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+    <path d="M6 5.5h4M6 8h4M6 10.5h2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  </svg>
+)}
+
+{name === 'studies' && (
+  <svg class={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M3 4.5h10M3 8h10M3 11.5h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M3 4.5v7M13 4.5v3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  </svg>
+)}
+
+{name === 'about' && (
+  <svg class={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <circle cx="8" cy="5.5" r="2.25" stroke="currentColor" stroke-width="1.5" />
+    <path d="M3.5 13.25c.9-2.1 2.4-3.25 4.5-3.25s3.6 1.15 4.5 3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  </svg>
+)}
+
+{name === 'contact' && (
+  <svg class={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <rect x="2.5" y="4" width="11" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5" />
+    <path d="m3.5 5.5 4.5 3.25L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
 )}

@@ -19,9 +19,18 @@ interface Props {
 }
 
 const { navLinks, cta } = Astro.props;
+
+const iconByLabel: Record<string, 'home' | 'research' | 'publications' | 'studies' | 'about' | 'contact'> = {
+  Home: 'home',
+  Research: 'research',
+  Publications: 'publications',
+  Studies: 'studies',
+  About: 'about',
+  Contact: 'contact',
+};
 ---
 <header class="top-nav">
-  <div class="nav-inner pad-x">
+  <div class="nav-inner container">
     <a class="brand" href="/">
       <p class="brand-name">Dr Piet Malepa</p>
     </a>
@@ -29,7 +38,10 @@ const { navLinks, cta } = Astro.props;
       <summary class="menu-pill">Menu</summary>
       <nav class="mobile-menu-panel" aria-label="Mobile">
         {navLinks.map((link) => (
-          <a class={`nav-link${link.active ? ' active' : ''}`} href={link.href}>{link.label}</a>
+          <a class={`nav-link${link.active ? ' active' : ''}`} href={link.href}>
+            {iconByLabel[link.label] && <Icon name={iconByLabel[link.label]} class="nav-icon" />}
+            {link.label}
+          </a>
         ))}
         <a class="btn btn-primary btn-small mobile-menu-cta" href={cta.href}>
           {cta.label}
@@ -39,7 +51,10 @@ const { navLinks, cta } = Astro.props;
     </details>
     <nav class="nav-links" aria-label="Primary">
       {navLinks.map((link) => (
-        <a class={`nav-link${link.active ? ' active' : ''}`} href={link.href}>{link.label}</a>
+        <a class={`nav-link${link.active ? ' active' : ''}`} href={link.href}>
+          {iconByLabel[link.label] && <Icon name={iconByLabel[link.label]} class="nav-icon" />}
+          {link.label}
+        </a>
       ))}
     </nav>
     <a class="btn btn-primary btn-small nav-cta" href={cta.href}>

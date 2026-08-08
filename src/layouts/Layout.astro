@@ -6,6 +6,12 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'profile' | 'article';
+  keywords?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   bodyClass?: string;
   navLinks: NavLink[];
   cta: CTA;
@@ -13,19 +19,124 @@ interface Props {
   footerCopy: string;
 }
 
-const { title, bodyClass, navLinks, cta, footerMeta, footerCopy } = Astro.props;
+const {
+  title,
+  description = 'Dr Piet Lesiba Malepa is a conservation ecologist based in Pretoria, South Africa, working on amphibian conservation, zoo ecology, and biodiversity management for threatened species including Pickersgill\'s reed frog.',
+  image = '/assets/images/optimized/dr-piet-malepa-joburg-parks-speech.jpg',
+  type = 'website',
+  keywords = 'Dr Piet Malepa, Piet Lesiba Malepa, conservation ecology, Pickersgill reed frog, Hyperolius pickersgilli, amphibian conservation, zoo ecology, Johannesburg Zoo, Pretoria, biodiversity management, captive breeding',
+  noindex = false,
+  jsonLd,
+  bodyClass,
+  navLinks,
+  cta,
+  footerMeta,
+  footerCopy,
+} = Astro.props;
+
+const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? 'https://drmalepa.co.za';
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
+const imageURL = new URL(image, siteUrl).href;
 const isProduction = import.meta.env.PROD;
+
+const defaultPersonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Dr Piet Lesiba Malepa',
+  alternateName: ['Piet Malepa', 'Piet Lesiba Malepa', 'Dr Piet Malepa'],
+  url: siteUrl,
+  image: imageURL,
+  jobTitle: 'Conservation Ecologist',
+  email: 'mailto:piet.malepa@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Pretoria',
+    addressCountry: 'ZA',
+  },
+  sameAs: [
+    'https://za.linkedin.com/in/dr-piet-lesiba-malepa-phd-9296ab7b',
+  ],
+  knowsAbout: [
+    'Conservation ecology',
+    'Amphibian conservation',
+    "Pickersgill's reed frog",
+    'Zoo ecology',
+    'Biodiversity management',
+    'Captive breeding',
+  ],
+};
+
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Dr Piet Malepa',
+  url: siteUrl,
+  description,
+  inLanguage: 'en-ZA',
+  publisher: {
+    '@type': 'Person',
+    name: 'Dr Piet Lesiba Malepa',
+  },
+};
+
+const schemaBlocks = jsonLd
+  ? Array.isArray(jsonLd)
+    ? jsonLd
+    : [jsonLd]
+  : [websiteLd, defaultPersonLd];
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en-ZA">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Dr Piet Lesiba Malepa" />
+    <meta name="creator" content="Dr Piet Lesiba Malepa" />
+    <meta name="publisher" content="Dr Piet Malepa" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
+    <meta name="googlebot" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <meta name="theme-color" content="#2f5d5b" />
+    <meta name="color-scheme" content="light" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="geo.region" content="ZA-GP" />
+    <meta name="geo.placename" content="Pretoria" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en-ZA" href={canonicalURL} />
+    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Dr Piet Malepa" />
+    <meta property="og:locale" content="en_ZA" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:image:alt" content="Dr Piet Malepa speaking at a Johannesburg City Parks event" />
+    <meta property="og:image:width" content="768" />
+    <meta property="og:image:height" content="1024" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+    <meta name="twitter:image:alt" content="Dr Piet Malepa speaking at a Johannesburg City Parks event" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/images/optimized/dr-piet-malepa-joburg-parks-speech.jpg" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+
+    {schemaBlocks.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+
     {isProduction && (
       <script defer src="https://umami.brightsync.co.za/script.js" data-website-id="3db932a1-5a72-4605-a848-fb65df52bb7f"></script>
     )}

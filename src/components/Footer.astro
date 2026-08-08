@@ -6,8 +6,8 @@ interface Props {
 
 const { metaLine, copyLine } = Astro.props;
 ---
-<footer class="site-footer pad-x">
-  <div class="footer-grid">
+<footer class="site-footer">
+  <div class="container footer-grid">
     <div>
       <p class="footer-brand">Dr Piet Malepa</p>
       <p class="footer-meta">{metaLine}</p>
@@ -17,7 +17,7 @@ const { metaLine, copyLine } = Astro.props;
       <a href="/">Home</a>
       <a href="/research">Research</a>
       <a href="/#publications">Publications</a>
-      <a href="/#field-notes">Field Notes</a>
+      <a href="/#studies">Studies</a>
     </nav>
     <nav class="footer-links" aria-label="Profile links">
       <span class="footer-heading mono">Profiles</span>
@@ -39,7 +39,7 @@ const { metaLine, copyLine } = Astro.props;
       <a href="/terms-and-conditions">Terms and Conditions</a>
     </nav>
   </div>
-  <div class="footer-bottom">
+  <div class="container footer-bottom">
     <span class="mono">{copyLine}</span>
     <span class="mono">Wildlife Systems Lab · Pretoria</span>
   </div>
