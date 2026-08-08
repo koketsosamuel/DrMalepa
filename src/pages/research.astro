@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/research', label: 'Research', active: true },
@@ -8,7 +9,7 @@ const navLinks = [
 ];
 const cta = { label: 'Start a Project', href: '/contact' };
 ---
-<Layout title="Research | Dr Piet Malepa" brandRole="Conservation ecology and zoological systems" navLinks={navLinks} cta={cta} footerMeta="Research across species behavior and habitat resilience" footerCopy="© 2026 Research Page">
+<Layout title="Research | Dr Piet Malepa" navLinks={navLinks} cta={cta} footerMeta="Research across species behavior and habitat resilience" footerCopy="© 2026 Research Page">
   <main>
       <section class="section">
         <div class="container hero-grid">
@@ -109,7 +110,7 @@ const cta = { label: 'Start a Project', href: '/contact' };
                 Investigates litter awareness and visitor perceptions in Johannesburg Zoo and links behavior insights
                 to conservation communication and site management.
               </p>
-              <a class="card-link" href="https://ir.unisa.ac.za/handle/10500/18815" target="_blank" rel="noopener noreferrer">Open repository record -></a>
+              <a class="card-link" href="https://ir.unisa.ac.za/handle/10500/18815" target="_blank" rel="noopener noreferrer">Open repository record <Icon name="arrow-right" /></a>
             </article>
             <article class="card">
               <h3 class="card-title">Amphibian Ark Newsletter Report (2019)</h3>
@@ -117,7 +118,7 @@ const cta = { label: 'Start a Project', href: '/contact' };
                 Practice-oriented report discussing nutrition/feed presentation observations and development in
                 Pickersgill's reed frog husbandry work.
               </p>
-              <a class="card-link" href="https://www.amphibianark.org/fileadmin/uploads/aark/Newsletters/Newsletters_ENG/AArk-newsletter-47.pdf" target="_blank" rel="noopener noreferrer">Open PDF -></a>
+              <a class="card-link" href="https://www.amphibianark.org/fileadmin/uploads/aark/Newsletters/Newsletters_ENG/AArk-newsletter-47.pdf" target="_blank" rel="noopener noreferrer">Open PDF <Icon name="arrow-right" /></a>
             </article>
             <article class="card">
               <h3 class="card-title">Husbandry Guidelines (2022)</h3>
@@ -125,7 +126,7 @@ const cta = { label: 'Start a Project', href: '/contact' };
                 Structured care and breeding protocol document from the JCPZ amphibian project team for
                 Hyperolius pickersgilli conservation practice.
               </p>
-              <a class="card-link" href="https://www.amphibianark.org/fileadmin/uploads/aark/Husbandry_Library/2017_Hyperolius-pickergilli-Husbandry-manual-2022.pdf" target="_blank" rel="noopener noreferrer">Open guideline PDF -></a>
+              <a class="card-link" href="https://www.amphibianark.org/fileadmin/uploads/aark/Husbandry_Library/2017_Hyperolius-pickergilli-Husbandry-manual-2022.pdf" target="_blank" rel="noopener noreferrer">Open guideline PDF <Icon name="arrow-right" /></a>
             </article>
           </div>
         </div>

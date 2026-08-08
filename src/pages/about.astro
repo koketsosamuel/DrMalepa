@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/research', label: 'Research' },
@@ -8,7 +9,7 @@ const navLinks = [
 ];
 const cta = { label: 'Talk to Dr Malepa', href: '/contact' };
 ---
-<Layout title="About | Dr Piet Malepa" brandRole="Conservation science and applied ecology" navLinks={navLinks} cta={cta} footerMeta="Research | Mentorship | Conservation Leadership" footerCopy="© 2026 About Page">
+<Layout title="About | Dr Piet Malepa" navLinks={navLinks} cta={cta} footerMeta="Research | Mentorship | Conservation Leadership" footerCopy="© 2026 About Page">
   <main>
       <section class="section">
         <div class="container split-grid">
@@ -70,7 +71,7 @@ const cta = { label: 'Talk to Dr Malepa', href: '/contact' };
                 A 2014 dissertation record in the Unisa repository documents Piet Lesiba Malepa's MSc work on
                 visitor perceptions of litter at Johannesburg Zoo.
               </p>
-              <a class="card-link" href="https://ir.unisa.ac.za/handle/10500/18815" target="_blank" rel="noopener noreferrer">View Unisa repository record -></a>
+              <a class="card-link" href="https://ir.unisa.ac.za/handle/10500/18815" target="_blank" rel="noopener noreferrer">View Unisa repository record <Icon name="arrow-right" /></a>
             </article>
             <article class="card" style="background: #f6fbf4;">
               <span class="degree-tag">Affiliation</span>
@@ -79,7 +80,7 @@ const cta = { label: 'Talk to Dr Malepa', href: '/contact' };
                 Co-authorship and program outputs connect his work to JCPZ-linked amphibian conservation efforts,
                 including Zoo Biology papers and field-to-husbandry knowledge transfer.
               </p>
-              <a class="card-link" href="https://pubmed.ncbi.nlm.nih.gov/35255154/" target="_blank" rel="noopener noreferrer">See Zoo Biology publication -></a>
+              <a class="card-link" href="https://pubmed.ncbi.nlm.nih.gov/35255154/" target="_blank" rel="noopener noreferrer">See Zoo Biology publication <Icon name="arrow-right" /></a>
             </article>
             <article class="card" style="background: #ecf5ef; border-color: #c9dec3;">
               <span class="degree-tag">Program Role</span>
@@ -88,7 +89,7 @@ const cta = { label: 'Talk to Dr Malepa', href: '/contact' };
                 Publicly available husbandry guidelines and media references list management and welfare leadership
                 context in support of amphibian conservation operations.
               </p>
-              <a class="card-link" href="https://www.amphibianark.org/fileadmin/uploads/aark/Husbandry_Library/2017_Hyperolius-pickergilli-Husbandry-manual-2022.pdf" target="_blank" rel="noopener noreferrer">Open husbandry guideline -></a>
+              <a class="card-link" href="https://www.amphibianark.org/fileadmin/uploads/aark/Husbandry_Library/2017_Hyperolius-pickergilli-Husbandry-manual-2022.pdf" target="_blank" rel="noopener noreferrer">Open husbandry guideline <Icon name="arrow-right" /></a>
             </article>
           </div>
         </div>

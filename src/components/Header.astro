@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 export interface NavLink {
   href: string;
   label: string;
@@ -8,25 +10,19 @@ export interface NavLink {
 export interface CTA {
   label: string;
   href: string;
+  arrow?: boolean;
 }
 
 interface Props {
-  brandRole: string;
   navLinks: NavLink[];
   cta: CTA;
 }
 
-const { brandRole, navLinks, cta } = Astro.props;
+const { navLinks, cta } = Astro.props;
 ---
-<div class="meta-bar pad-x">
-  <span class="mono">Wildlife Systems Lab · Pretoria · ZA</span>
-  <span class="mono"><span class="live-dot" aria-hidden="true"></span>Field season · Active</span>
-  <span class="mono">Vol. XII · May 2026</span>
-</div>
 <header class="top-nav">
   <div class="nav-inner pad-x">
     <a class="brand" href="/">
-      <span class="brand-role mono">{brandRole}</span>
       <p class="brand-name">Dr Piet Malepa</p>
     </a>
     <details class="mobile-menu">
@@ -35,7 +31,10 @@ const { brandRole, navLinks, cta } = Astro.props;
         {navLinks.map((link) => (
           <a class={`nav-link${link.active ? ' active' : ''}`} href={link.href}>{link.label}</a>
         ))}
-        <a class="btn btn-primary btn-small mobile-menu-cta" href={cta.href}>{cta.label}</a>
+        <a class="btn btn-primary btn-small mobile-menu-cta" href={cta.href}>
+          {cta.label}
+          {cta.arrow && <Icon name="arrow-right" />}
+        </a>
       </nav>
     </details>
     <nav class="nav-links" aria-label="Primary">
@@ -43,6 +42,9 @@ const { brandRole, navLinks, cta } = Astro.props;
         <a class={`nav-link${link.active ? ' active' : ''}`} href={link.href}>{link.label}</a>
       ))}
     </nav>
-    <a class="btn btn-primary btn-small nav-cta" href={cta.href}>{cta.label}</a>
+    <a class="btn btn-primary btn-small nav-cta" href={cta.href}>
+      {cta.label}
+      {cta.arrow && <Icon name="arrow-right" />}
+    </a>
   </div>
 </header>

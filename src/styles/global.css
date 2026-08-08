@@ -10,8 +10,8 @@
   --rule-strong: rgba(31, 42, 38, 0.28);
   --inverse: #f4efe6;
   --display-font: "Fraunces", Georgia, serif;
-  --body-font: "Source Serif 4", Georgia, serif;
-  --mono-font: "JetBrains Mono", monospace;
+  --body-font: "DM Sans", "Segoe UI", sans-serif;
+  --ui-font: "DM Sans", "Segoe UI", sans-serif;
   --shadow-soft: 0 18px 44px rgba(31, 42, 38, 0.08);
 }
 
@@ -28,8 +28,12 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--body-font);
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -59,11 +63,11 @@ img {
 .figcaption,
 .degree-tag,
 label {
-  font-family: var(--mono-font);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--ui-font);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: none;
 }
 
 .meta-bar {
@@ -75,6 +79,12 @@ label {
   color: var(--muted);
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+.meta-bar .mono {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .live-dot {
@@ -124,14 +134,18 @@ label {
   display: block;
   margin-bottom: 8px;
   color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .brand-name {
   margin: 0;
   color: var(--ink);
   font-family: var(--display-font);
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.125rem;
+  font-style: italic;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -143,8 +157,14 @@ label {
 
 .nav-link {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
   color: var(--ink);
-  font-size: 0.92rem;
+  font-family: var(--body-font);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 .nav-link::after {
@@ -200,12 +220,14 @@ label {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.45em;
   border: 1px solid transparent;
   background: transparent;
   color: inherit;
   cursor: pointer;
   font-family: var(--body-font);
-  font-size: 0.94rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
   line-height: 1;
   min-height: 46px;
   padding: 13px 24px;
@@ -308,10 +330,10 @@ main {
   margin: 0;
   color: var(--ink);
   font-family: var(--display-font);
-  font-size: clamp(3.5rem, 7.6vw, 7.25rem);
+  font-size: clamp(2.5rem, 4.2vw, 3.75rem);
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 0.99;
+  line-height: 1.05;
 }
 
 .display-title em,
@@ -337,15 +359,17 @@ main {
   margin: 28px 0 0;
   max-width: 640px;
   color: var(--muted);
-  font-size: 1.24rem;
-  line-height: 1.5;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .body-copy {
   max-width: 620px;
   color: var(--ink);
-  font-size: 1.08rem;
-  line-height: 1.62;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 .button-row {
@@ -392,7 +416,9 @@ main {
   gap: 14px;
   margin-top: 14px;
   color: var(--muted);
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .stats-grid {
@@ -533,6 +559,9 @@ main {
 }
 
 .pub-link-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
   align-self: center;
   border-left: 1px solid var(--rule);
   padding-left: 24px;
@@ -696,13 +725,16 @@ main {
 }
 
 .card-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
   margin-top: 16px;
   color: var(--accent);
-  font-family: var(--mono-font);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--ui-font);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .inline-link {
@@ -710,6 +742,13 @@ main {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+
+.icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
 .focus-list,
@@ -868,8 +907,8 @@ textarea {
   }
 
   .display-title {
-    font-size: 3rem;
-    line-height: 1.04;
+    font-size: 2.25rem;
+    line-height: 1.08;
   }
 
   .section-title {
