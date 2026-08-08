@@ -66,6 +66,7 @@ const researchStudies = [
     body: "Reviews the first five years of collaborative BMP implementation for Pickersgill's reed frog across partner organisations and protected wetland sites.",
     href: 'https://www.abcjournal.org/index.php/abc/article/view/495',
     image: '/assets/images/optimized/dr-piet-malepa-joburg-parks-speech.jpg',
+    imagePosition: 'center top',
   },
   {
     year: '2025',
@@ -252,7 +253,11 @@ const researchStudies = [
         <div class="field-grid">
           {researchStudies.map((study) => (
             <a class="field-card" href={study.href} target="_blank" rel="noopener noreferrer">
-              <img src={study.image} alt="" />
+              <img
+                src={study.image}
+                alt=""
+                style={study.imagePosition ? `object-position: ${study.imagePosition}` : undefined}
+              />
               <span class="mono">{study.year} · {study.journal}</span>
               <h3 class="card-title" style="margin-top: 10px;">{study.title}</h3>
               <p class="card-body">{study.body}</p>
